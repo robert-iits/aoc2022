@@ -6,6 +6,10 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    implementation("org.junit.jupiter:junit-jupiter:5.9.1")
+}
+
 tasks {
     sourceSets {
         main {
@@ -14,6 +18,6 @@ tasks {
     }
 
     wrapper {
-        gradleVersion = "7.6"
+        gradleVersion = "8.0"
     }
 }
