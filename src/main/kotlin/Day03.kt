@@ -29,12 +29,23 @@ class Day03 {
         }
     }
 
-    fun part2(listOfRucksacks: List<String>) {
+    fun part2(listOfRucksacks: List<String>): Int {
         val rucksacks = listOfRucksacks.toMutableList()
+        var sumOfPriority = 0
         while(rucksacks.isNotEmpty()) {
-            rucksacks.take(3).forEach {  }
-            rucksacks.drop(3)
+            rucksacks.take(3).let {
+                sumOfPriority += getPriority(getCommonChar(it))
+                rucksacks.removeAll(it)
+            }
         }
+        return sumOfPriority
+    }
+
+    private fun getCommonChar(it: List<String>): Char {
+        it.first().forEach { char ->
+            if (it[1].contains(char) && it.last().contains(char)) return char
+        }
+        throw IllegalArgumentException()
     }
 }
 
