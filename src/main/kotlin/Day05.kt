@@ -95,5 +95,4 @@ fun main() {
     val input = readInput("Day05")
     println("duration (ms): " + measureTimeMillis { println("part 1: " + Day05().part1(input))  })
     println("duration (ms): " + measureTimeMillis { println("part 2: " + Day05().part2(input))  })
-    // LVZPSTTCZ
 }

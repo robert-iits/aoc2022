@@ -1,4 +1,3 @@
-import io.kotest.matchers.collections.shouldHaveSize
 import io.kotest.matchers.maps.shouldHaveSize
 import org.junit.jupiter.api.Test
 import io.kotest.matchers.shouldBe
@@ -30,7 +29,7 @@ internal class Day21Test {
         val parsedMonkey = sut.parseInputLineToMonkey("root: pppw + sjmn")
 
         with(parsedMonkey["root"]!!) {
-            value shouldBe null
+            number shouldBe null
             monkey1name shouldBe "pppw"
             monkey2name shouldBe "sjmn"
             operator shouldBe '+'
@@ -43,7 +42,7 @@ internal class Day21Test {
         val parsedMonkey = sut.parseInputLineToMonkey("hmdt: 32")
 
         with(parsedMonkey["hmdt"]!!) {
-            value shouldBe 32
+            number shouldBe 32.toBigInteger()
             monkey1name shouldBe null
             monkey2name shouldBe null
             operator shouldBe null
@@ -60,10 +59,11 @@ internal class Day21Test {
 
     @Test
     fun part1() {
-        sut.part1(testInput) shouldBe 152
+        sut.part1(testInput) shouldBe 152.toBigInteger()
     }
 
     @Test
     fun part2() {
+        sut.part2(testInput) shouldBe 301.toBigInteger()
     }
 }

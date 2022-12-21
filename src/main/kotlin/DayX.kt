@@ -1,3 +1,5 @@
+import kotlin.system.measureTimeMillis
+
 class DayX {
 
     fun part1(input: List<String>): Int {
@@ -9,8 +11,7 @@ class DayX {
 }
 
 fun main() {
-    println("part 1:")
-    println(DayX().part1(readInput("DayX")))
-    println("part 2:")
-    println(DayX().part2(readInput("DayX")))
+    val input = readInput("DayX")
+    println("duration (ms): " + measureTimeMillis { println("part 1: " + DayX().part1(input))  })
+    println("duration (ms): " + measureTimeMillis { println("part 2: " + DayX().part2(input))  })
 }
